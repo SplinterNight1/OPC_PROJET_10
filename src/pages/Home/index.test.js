@@ -27,7 +27,7 @@ describe("When Form is created", () => {
 
 });
 
-
+//TODO: A FAIRE TESTS UNITAIRES
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
     // to implement
@@ -39,6 +39,12 @@ describe("When a page is created", () => {
     // to implement
   })
   it("an event card, with the last event, is displayed", () => {
-    // to implement
+    render(< Home />)
+    waitFor(() => {
+      expect(screen.getByTestId("derniere-prestation")).toBeInTheDocument()
+      /* Test d'un élément présent dans la dernière prestation */
+      expect(screen.getByRole('date')).toBeInTheDocument()
+    })
+  })
   })
 });
