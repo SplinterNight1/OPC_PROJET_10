@@ -31,7 +31,7 @@ const Page = () => {
       <section className="ServicesContainer">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
-        <div className="ListContainer">
+        <div className="ListContainer" data-testid="our-team">
           <ServiceCard imageSrc="/images/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png">
             <h3>Soirée d’entreprise</h3>
             Une soirée d’entreprise vous permet de réunir vos équipes pour un
@@ -119,7 +119,7 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer className="row" data-testid="footer">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
         {/* Ici il faut ajouter last pour éviter les erreurs "undefined"

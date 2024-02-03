@@ -30,21 +30,31 @@ describe("When Form is created", () => {
 //TODO: A FAIRE TESTS UNITAIRES
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    // to implement
+    render(< Home />)
+    expect(screen.getByTestId("list-container")).toBeInTheDocument()
+    /* Ici on test si un élément de la liste est présent */
+    waitFor(() => {
+      expect(screen.getByText("#DigitonPARIS")).toBeInTheDocument()
+    })
   })
   it("a list a people is displayed", () => {
-    // to implement
+    expect(screen.getByTestId("our-team")).toBeInTheDocument()
+    /* Ici on test si les personnes apparaissent, de la pemière à la dernière */
+    expect(screen.getByText("Samira")).toBeInTheDocument()
+    expect(screen.getByText('Isabelle')).toBeInTheDocument()
   })
   it("a footer is displayed", () => {
-    // to implement
+    render(< Home />)
+    expect(screen.getByTestId("footer")).toBeInTheDocument()
+    /* Ici on test si un élément du footer est présent*/
+    expect(screen.getByText("Contactez-nous")).toBeInTheDocument()
   })
   it("an event card, with the last event, is displayed", () => {
     render(< Home />)
     waitFor(() => {
       expect(screen.getByTestId("derniere-prestation")).toBeInTheDocument()
-      /* Test d'un élément présent dans la dernière prestation */
+      /* Ici on test si un élément de la dernière présentation est présent */
       expect(screen.getByRole('date')).toBeInTheDocument()
     })
-  })
   })
 });
