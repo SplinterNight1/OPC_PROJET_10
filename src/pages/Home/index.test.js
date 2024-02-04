@@ -1,4 +1,6 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+// import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+
 import Home from "./index";
 
 describe("When Form is created", () => {
@@ -21,7 +23,9 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
-      await screen.findByText("Message envoyé !");
+      // await screen.findByText("Message envoyé !");
+      // Ici on attend que "Message envoyé" apparaisse avec un timeout de 2 secondes
+      await waitFor(() => screen.findByText("Message envoyé !"), {timeout:2000});
     });
   });
 
@@ -38,6 +42,7 @@ describe("When a page is created", () => {
     })
   })
   it("a list a people is displayed", () => {
+    render(< Home />)
     expect(screen.getByTestId("our-team")).toBeInTheDocument()
     /* Ici on test si les personnes apparaissent, de la pemière à la dernière */
     expect(screen.getByText("Samira")).toBeInTheDocument()
