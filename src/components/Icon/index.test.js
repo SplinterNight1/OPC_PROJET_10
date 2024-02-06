@@ -11,7 +11,9 @@ describe("Icon component", () => {
     });
     describe("When a icon is created with name facebook", () => {
         it("the icon contain this path hash value bbea4c9e40773b969fdb6e406059f853", () => {
-            // to complete
+            render(<Icon name="facebook" />)
+            // Ici On voit si l'icone contient le hash du chemin d'accès suivant : bbea4c9e40773b969fdb6e406059f853
+            expect(md5(screen.getByTestId("facebook-icon").getAttribute('d'))).toEqual('bbea4c9e40773b969fdb6e406059f853')
         });
     });
 })

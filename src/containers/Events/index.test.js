@@ -58,8 +58,12 @@ describe("When Events is created", () => {
       expect(await screen.findByText("An error occured")).toBeInTheDocument();
     });
   });
+
+  //SKIPPED = only
+  //Mmodifié
   describe("and we select a category", () => {
-    it.only("an filtered list is displayed", async () => {
+    // it.only("an filtered list is displayed", async () => {
+      it.only("an filtered list is displayed", async () => {
       api.loadData = jest.fn().mockReturnValue(data);
       render(
         <DataProvider>
