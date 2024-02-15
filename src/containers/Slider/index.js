@@ -70,8 +70,9 @@ const Slider = () => {
                     type="radio"
                     name="radio-button"
                     /*
-                      Changement de idx par index pour indiquer sur quelle image on se trouve , pour éviter de prendre l'index de la map parent
+                      Changement de idx par index pour indiquer sur quelle image on se trouve , pour éviter de prendre l'index de la map parent et ajout readonly pour éviter erreur
                     */
+                      readOnly
                       checked={index === radioIdx}
                    />
                   // <input
