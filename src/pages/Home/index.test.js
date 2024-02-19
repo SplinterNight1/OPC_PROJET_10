@@ -23,7 +23,7 @@ describe("When Form is created", () => {
         })
       );
       await screen.findByText("En cours");
-      //modifié
+      // ajouté & modifié
       // await screen.findByText("Message envoyé !");
       // Ici on attend que "Message envoyé" apparaisse avec un timeout de 2 secondes
       await waitFor(() => screen.findByText("Message envoyé !"), {timeout:2000});
@@ -32,10 +32,10 @@ describe("When Form is created", () => {
 
 });
 
-//TODO: A FAIRE TESTS UNITAIRES
+//TESTS FONCTIONNELS
 describe("When a page is created", () => {
   it("a list of events is displayed", () => {
-    //implémenté
+    // ajouté
     render(< Home />)
     expect(screen.getByTestId("list-container")).toBeInTheDocument()
     /* Ici on test si un élément de la liste est présent */
@@ -44,7 +44,7 @@ describe("When a page is created", () => {
     })
   })
   it("a list a people is displayed", () => {
-    //implémenté
+    // ajouté
     render(< Home />)
     expect(screen.getByTestId("our-team")).toBeInTheDocument()
     /* Ici on test si les personnes apparaissent, de la pemière à la dernière */
@@ -52,18 +52,18 @@ describe("When a page is created", () => {
     expect(screen.getByText('Isabelle')).toBeInTheDocument()
   })
   it("a footer is displayed", () => {
-    //implémenté
+    // ajouté
     render(< Home />)
     /* Ici on test si le footer est présent*/
     expect(screen.getByTestId("footer")).toBeInTheDocument()
   })
   it("an event card, with the last event, is displayed", () => {
-    //implémenté
+    // ajouté
     render(< Home />)
     waitFor(() => {
-      /* Ici on test si EventCard de la dernière présentation est présent pas besoin 
-      de plus car autres éléments déjà testé dans le test pour EventCard */
+      // Ici, on teste si EventCard de la dernière présentation est présent
       expect(screen.getByTestId("derniere-prestation")).toBeInTheDocument()
+      // Pas besoin de plus car d'autres éléments déjà testés dans le test pour EventCard
     })
   })
 });

@@ -60,7 +60,7 @@ describe("When Events is created", () => {
   });
 
   //SKIPPED = only
-  //Mmodifié
+  // ajouté & modifié
   describe("and we select a category", () => {
     // it.only("an filtered list is displayed", async () => {
       it.only("an filtered list is displayed", async () => {
